@@ -1,0 +1,30 @@
+{{#partial "content"}}
+
+        <form method="post" action="/endangered">
+            <div class="form-group">
+                <label for="name"> What was the animals name</label>
+                <input class="form-control" type="text" name="animal_name" id="animal_name">
+                <label for="location"> Where was seen at!</label>
+                <select id="id" name="id" class="form-control">
+                    {{#each sightings}}
+                        <option name="sighting_id" value={{location}}> {{location}}  </option>
+                    {{/each}}
+                </select>
+                <label for="age">Age?</label>
+                <select id="age">
+                    <option name="age">Old</option>
+                    <option name="age">Young</option>
+                    <option name="age">NewBorn</option>
+                </select>
+                <label for="health">Health</label>
+                <select id="health">
+                    <option name="health">Ill</option>
+                    <option name="health">Okay</option>
+                    <option name="health">Good</option>
+                </select>
+                <button type="submit" class="btn btn-danger">Submit!</button>
+            </div>
+        </form>
+
+{{/partial}}
+{{>layout.hbs}}

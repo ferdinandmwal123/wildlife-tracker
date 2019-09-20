@@ -1,0 +1,22 @@
+{{#partial "content"}}
+    <div class="col-md-6">
+    <form  action="/sightings" method="post">
+        <div class="form-group">
+            <label for="name">Ranger Name</label>
+            <input class="form-control" placeholder="enter name" name="ranger_name" id="ranger_name">
+            <label for="location">Location</label>
+            <select name="location" id="location" class="form-control">
+                <option value="Zone 1" >Zone 1</option>
+                <option value="Zone 2" >Zone 2</option>
+                <option value="Zone 3" >Zone 3</option>
+            </select>
+
+            <button type="submit" class="btn btn-danger">Submit!</button>
+        </div>
+    </form>
+    </div>
+
+
+
+{{/partial}}
+{{>layout.hbs}}
