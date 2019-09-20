@@ -49,7 +49,8 @@ public class App {
         post("/sightings", (request, response) -> {
             String location = request.queryParams("location");
             String ranger_name = request.queryParams("ranger_name");
-            Sighting newSighting = new Sighting(location, ranger_name);
+            String animal_name = request.queryParams("animal_name");
+            Sighting newSighting = new Sighting(location, ranger_name, animal_name);
             sighting.add(newSighting);
             response.redirect("/sightings/all");
             return null;
@@ -70,16 +71,20 @@ public class App {
             int sighting_id = Integer.parseInt(request.params("sighting_id"));
             EndangeredAnimals endangeredAnimals1 = new EndangeredAnimals(animal_name, animal_health, animal_age, sighting_id);
             endangeredAnimals.add(endangeredAnimals1);
-            response.redirect("/sightings/all");
+            response.redirect("/endangered/all");
             return null;
         }, new HandlebarsTemplateEngine());
 
         get("/sightings/all", (request, response) -> {
             List<Sighting> sightings = sighting.getAll();
             model.put("sightings", sightings);
-            List<EndangeredAnimals> endangeredAnimals1 = endangeredAnimals.getAll();
-            model.put("endangered_animals", endangeredAnimals1);
             return new ModelAndView(model, "sightings.hbs");
+        }, new HandlebarsTemplateEngine() );
+
+        get("/endangered/all", (request, response) -> {
+            List<EndangeredAnimals> endangered = endangeredAnimals.getAll();
+            model.put("endangered_animals", endangered);
+            return new ModelAndView(model, "endangered.hbs");
         }, new HandlebarsTemplateEngine() );
 
 

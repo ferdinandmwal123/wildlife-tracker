@@ -28,7 +28,7 @@ public class SightingD implements SightingInt {
 
     @Override
     public void add(Sighting sighting) {
-        String sql = "INSERT INTO sightings (location, ranger_name) VALUES (:location, :ranger_name )";
+        String sql = "INSERT INTO sightings (location, ranger_name, animal_name) VALUES (:location, :ranger_name , :animal_name)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(sighting)
