@@ -65,11 +65,12 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         post("/endangered", (request, response) -> {
+            String ranger_name = request.queryParams("ranger_name");
             String animal_name = request.queryParams("animal_name");
             String animal_age = request.queryParams("animal_age");
             String animal_health = request.queryParams("animal_health");
-            int sighting_id = Integer.parseInt(request.params("sighting_id"));
-            EndangeredAnimals endangeredAnimals1 = new EndangeredAnimals(animal_name, animal_health, animal_age, sighting_id);
+            String location = request.queryParams("location");
+            EndangeredAnimals endangeredAnimals1 = new EndangeredAnimals(ranger_name,animal_name, animal_health, animal_age,location);
             endangeredAnimals.add(endangeredAnimals1);
             response.redirect("/endangered/all");
             return null;

@@ -1,0 +1,26 @@
+{{#partial "content"}}
+    <div class="row">
+        <div class="card-group">
+
+            {{#if endangeredAnimals1}}
+                {{#each endangeredAnimals1 }}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="/images/default.gif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ranger_name}}</h5>
+                                <p class="card-text">{{location}}</p>
+                                <p class="card-text"> {{animal_name}} </p>
+                                <p class="card-text"> {{animal_age}} </p>
+                                <p class="card-text"> {{animal_health}} </p>
+                                <p class="card-text"><small class="text-muted">Last updated a min ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+    </div>
+{{/partial}}
+{{>layout.hbs}}

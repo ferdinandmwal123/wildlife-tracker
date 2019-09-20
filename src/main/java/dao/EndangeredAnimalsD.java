@@ -25,7 +25,7 @@ public class EndangeredAnimalsD implements  EndangeredInt{
 
     @Override
     public void add(EndangeredAnimals endangeredAnimals) {
-        String sql = "INSERT INTO endangered_animals (animal_name, animal_health, animal_age, sighting_id) VALUES (:animal_name, :animal_health, :animal_age, :sighting_id)";
+        String sql = "INSERT INTO endangered_animals (ranger_name,animal_name, animal_health, animal_age, location) VALUES (:ranger_name, :animal_name, :animal_health, :animal_age, :location)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(endangeredAnimals)

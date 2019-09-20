@@ -3,16 +3,19 @@ package models;
 public class EndangeredAnimals {
 
     private int id;
+    private String ranger_name;
     private String animal_name;
     private String animal_health;
     private String animal_age;
     private int sighting_id;
+    private String location;
 
-    public EndangeredAnimals(String animal_name, String animal_health, String animal_age, int sighting_id) {
+    public EndangeredAnimals(String ranger_name,String animal_name, String animal_health, String animal_age, String location) {
         this.animal_name = animal_name;
         this.animal_health = animal_health;
         this.animal_age = animal_age;
-        this.sighting_id = sighting_id;
+        this.location= location;
+        this.ranger_name = ranger_name;
     }
 
     public int getId() {
