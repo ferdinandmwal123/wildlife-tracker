@@ -69,11 +69,11 @@ public class SightingD implements SightingInt {
     }
 
     @Override
-    public void update(int id, String animal_location, String ranger_name) {
-        String sql = "UPDATE sightings SET animal_location = :animal_location, ranger_name = :ranger_name WHERE id = :id";
+    public void update(int id, String location, String ranger_name) {
+        String sql = "UPDATE sightings SET location = :location, ranger_name = :ranger_name WHERE id = :id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
-                    .addParameter("animal_location", animal_location)
+                    .addParameter("location", location)
                     .addParameter("ranger_name", ranger_name)
                     .executeUpdate();
         } catch (Sql2oException ex) {

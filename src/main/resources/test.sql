@@ -11,6 +11,7 @@ id serial PRIMARY KEY,
   id serial PRIMARY KEY,
   location varchar ,
   ranger_name varchar,
+  animal_name varchar
   );
 
 CREATE TABLE IF NOT EXISTS endangered_animals (
