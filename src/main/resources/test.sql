@@ -1,6 +1,4 @@
 
-
-
 CREATE TABLE IF NOT EXISTS animals(
 id serial PRIMARY KEY,
  animal_name varchar,
