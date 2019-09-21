@@ -72,6 +72,12 @@ public class App {
             String location = request.queryParams("location");
             EndangeredAnimals endangeredAnimals1 = new EndangeredAnimals(ranger_name,animal_name, animal_health, animal_age,location);
             endangeredAnimals.add(endangeredAnimals1);
+            model.put("endangeredAnimals1",endangeredAnimals1);
+            model.put("ranger_name",ranger_name);
+            model.put("animal_name",animal_name);
+            model.put("animal_age",animal_age);
+            model.put("animal_health",animal_health);
+            model.put("location",location);
             response.redirect("/endangered/all");
             return null;
         }, new HandlebarsTemplateEngine());

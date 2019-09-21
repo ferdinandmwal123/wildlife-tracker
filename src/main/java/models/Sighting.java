@@ -1,10 +1,10 @@
 package models;
 
-public class Sighting {
+import java.util.Objects;
+
+public class Sighting extends MainAnimal{
     private int id;
     private String location;
-    private String ranger_name;
-    private String animal_name;
 
 
     public Sighting(String animal_location, String ranger_name, String animal_name ) {
@@ -12,6 +12,20 @@ public class Sighting {
         this.ranger_name = ranger_name;
         this.animal_name = animal_name;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sighting sighting = (Sighting) o;
+        return id == sighting.id &&
+                Objects.equals(location, sighting.location);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, location);
     }
 
     public String getAnimal_name() {

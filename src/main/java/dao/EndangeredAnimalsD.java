@@ -40,7 +40,7 @@ public class EndangeredAnimalsD implements  EndangeredInt{
     @Override
     public EndangeredAnimals findById(int id) {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM endangered_animalss WHERE id = :id")
+            return con.createQuery("SELECT * FROM endangered_animals WHERE id = :id")
                     .addParameter("id", id)
                     .executeAndFetchFirst(EndangeredAnimals.class);
         }

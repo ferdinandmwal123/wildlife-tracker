@@ -1,11 +1,12 @@
 package models;
 
-public class Animal {
+import java.util.Objects;
+
+public class Animal extends MainAnimal{
 
     private int id;
-    private String animal_name;
-    private int sighting_id;
     private String type;
+
 
     public Animal(String animal_name, int sighting_id) {
         this.animal_name = animal_name;
@@ -16,17 +17,24 @@ public class Animal {
         return id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return id == animal.id &&
+                Objects.equals(type, animal.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, type);
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getAnimal_name() {
-        return animal_name;
-    }
-
-    public void setAnimal_name(String animal_name) {
-        this.animal_name = animal_name;
-    }
 
     public int getSighting_id() {
         return sighting_id;
