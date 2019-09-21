@@ -1,15 +1,15 @@
-#Wildlife-tracker
+# Wildlife-tracker
 This app allows rangers to keep track of animals in location
 
-#By Ferdinand Mwalagho
+# By Ferdinand Mwalagho
 Description
 This app allows rangers to keep track of animals in location
 
-#Setup/ installation Requirments for users
+# Setup/ installation Requirments for users
 Clone or download button. Unzip & run :)
 
-Setup/ installation Requirments for developers
-#Required JDK Maven IDE
+# Setup/ installation Requirments for developers
+Required JDK Maven IDE
 
 confirm by running
 
@@ -19,21 +19,21 @@ $ java --version //java version
 
 then:
 
-#setup/Installation Requirements for developers
+# setup/Installation Requirements for developers
 Fork this repository into your account.
  Clone the app using the clone link provided https://github.com/ferdinandmwal123/wildlife-tracker.git 
  Open your terminal and it should be in your local repository.
   Open your favorite text editor
 
-#Known Bugs
+# Known Bugs
 So far none I have observed. However , I encourage feedback if you come across any bugs while using this app.
 
-#Technologies
+# Technologies
 Java Language 
 Gradle 
 Spark framework
 
-License
+# License
 MIT License
 
 Copyright (c) 2019 Ferdinand Mwalagho
