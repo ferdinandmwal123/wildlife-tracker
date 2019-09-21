@@ -13,6 +13,7 @@ public class SightingD implements SightingInt {
     private final Sql2o sql2o;
 
     public SightingD(Sql2o sql2o) { this.sql2o = sql2o; }
+
     @Override
     public List<Sighting> getAll() {
         try (Connection con = sql2o.open()) {
