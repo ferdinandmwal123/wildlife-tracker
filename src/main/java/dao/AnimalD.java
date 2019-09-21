@@ -52,7 +52,7 @@ public class AnimalD implements AnimalInt {
         try (Connection con = sql2o.open()) {
             return con.createQuery("SELECT * FROM endangered_animals WHERE animal_id = :animal_id")
                     .addParameter("animal_id", animal_id)
-                    .executeAndFetch(EndangeredAnimals.class)
+                    .executeAndFetch(EndangeredAnimals.class);
         }
     }
 
